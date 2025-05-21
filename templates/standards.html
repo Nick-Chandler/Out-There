@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standards</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <h1>Welcome to the Standards Page</h1>
+    <main class="options">
+      <section>Gender
+        <select name="gender" id="gender">Gender Preference
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="both">Both</option>
+        </select>
+      </section>
+      <section>Area
+        <select name="state" id="state"></select>
+      </section>
+      <section>Age
+        <select name="age-lower" id="age-lower">
+        </select>
+        <label for="age-lower">Age Lower</label>
+        <select name="age-higher" id="age-higher"></select>
+      </section>
+      <section>Income
+        <input type="range" id="min-income-slider" min="0" max="500000" value="0" step="10000">
+        <p id="min-income-value">0</p>
+        <label for="min-income-slider">Min Income</label>
+      </section>
+      <section>Race
+        <form id="race" class="race">
+          <label>
+            <input type="radio" name="race" value="white"> White
+          </label>
+          <label>
+            <input type="radio" name="race" value="black"> Black or African American
+          </label>
+          <label>
+            <input type="radio" name="race" value="native"> American Indian and Alaska Native
+          </label>
+          <label>
+            <input type="radio" name="race" value="asian"> Asian
+          </label>
+          <label>
+            <input type="radio" name="race" value="pacific"> Native Hawaiian and Other Pacific Islander
+          </label>
+          <label>
+            <input type="radio" name="race" value="multi"> Two or more races
+          </label>
+          <label>
+            <input type="radio" name="race" value="other"> Some other race
+          </label>
+          <label>
+            <input type="radio" name="race" value="all" id="all-preference" checked> No preference
+          </label>
+        </form>
+      </section>
+      <section>Height
+        <input type="range" id="min-height-slider" min="58" max="77" value="58" step="1">
+        <label for="min-height-slider">Min Height</label>
+        <p id="min-height-value">4 ft 10 in</p>
+        <input type="range" id="max-height-slider" min="58" max="77" value="77" step="1">
+        <label for="max-height-slider">Max Height</label>
+        <p id="max-height-value">6 ft 5 in+</p>
+      </section>
+      <section>Education
+        <select name="education" id="education">
+          <option value="all">No Preference</option>
+          <option value="highschool">High School Diploma</option>
+          <option value="bachelor">Bachelor's Degree</option>
+          <option value="master">Master's Degree</option>
+          <option value="advanced">Advanced Degree (Phd, MD, JD, etc.)</option>
+        </select>
+      </section>
+      <section>Politics
+        <label>
+            <input type="radio" name="politics" value="democrat">Democrat
+        </label>
+        <label>
+            <input type="radio" name="politics" value="republican">Republican
+        </label>
+        <label>
+            <input type="radio" name="politics" value="all" checked>No Preference
+        </label>
+      </section>
+      <button onclick="getResults()">See Results</button>
+
+  </main>
+</body>
+</html>
